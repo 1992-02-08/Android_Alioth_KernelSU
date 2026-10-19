@@ -65,7 +65,7 @@ jobs:
       - name: Add KSU configs to defconfig
         run: |
           sed -i '/CONFIG_KSU=/d' arch/arm64/configs/alioth_perf_defconfig
-          echo -e "\nCONFIG_KSU=y\nCONFIG_KSU_THRONE_TRACKER_ALWAYS_THREADED=y" >> arch/arm64/configs/alioth_perf_defconfig
+          echo -e "\nCONFIG_KSU=y\nCONFIG_KSU_THRONE_TRACKER_ALWAYS_THREADED=y\nCONFIG_TMPFS_XATTR=y" >> arch/arm64/configs/alioth_perf_defconfig
           tail -5 arch/arm64/configs/alioth_perf_defconfig
 
       - name: Clean old build artifacts
